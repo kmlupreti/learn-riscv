@@ -71,6 +71,6 @@ xori x1, x2, 58
 ; it performs bit by bit NOT operation such that it reverses the bit value
 ; It normally takes single operand but in risc-v NOT operation is achieved by
 ; carrying out XOR operation(xori) with number having all 32 bit values 1
-; for eg. x1 = x2 ^ x3
+; for eg. x1 = ~x2 
 ; if x2= 101001 then x1= 010110
 xori x1, x2, 4294967295
