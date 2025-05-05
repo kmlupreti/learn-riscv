@@ -16,10 +16,10 @@ addi x2, x2, 8 ; shrink the stack to its original size.
 jalr x0,0(x1); return to caller
 
 L1:
-addi x10, x0, x3 ; put n-1 located in x3 to argument register x10
+add x10, x0, x3 ; copy value of n-1 from x3 to x10
 jal x1, fact ; call fact with n-1 argument keeping return address same
-addi x4, x0, x10 ; copy result of fact(n-1) from x10 to x4
+add x4, x0, x10 ; copy result of fact(n-1) from x10 to x4
 lw x10, 0(x2) ; pop argument n into register x10
-lw x10, 4(x2) ; pop return address into register x1
+lw x1, 4(x2) ; pop return address into register x1
 mul x10, x10, x4; calculate n * fact(n-1)   
 jalr x0, 0(x1) ; return to caller
