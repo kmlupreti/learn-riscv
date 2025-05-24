@@ -1,4 +1,4 @@
-; sort function using bubble sort metho
+; sort function using bubble sort method
 ; void sort(int v[], size_t n){
 ;   size_t i,j;
 ;   for (i=0;i<n;i++) {
@@ -39,5 +39,5 @@ exit:
         lw x1, 12(x2) ; restore return address
         lw x18, 8(x2) ; restore x18
         addi x2, x2, 16 ; restore stack size
-        jal x0, 0(x1) ; return to caller
+        jalr x0, x1, 0 ; return to caller
 
